@@ -1,0 +1,17 @@
+header {
+   /* background-color:#2c237b ;*/
+}
+body {
+    background-color:rgb(255, 255, 255);
+}
+.letraBlanco{
+    color: #ffffff;
+}
+.mi-imagen {
+    border-radius: 50%;
+    width: 200px; /* Ajusta el ancho según tus necesidades */
+    height: 200px; /* Ajusta la altura según tus necesidades */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+  }
+  
+  
