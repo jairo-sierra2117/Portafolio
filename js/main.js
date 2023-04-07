@@ -31,4 +31,5 @@ ScrollReveal().reveal(".button--cta", { delay: 550 });
 ScrollReveal().reveal(".skill__title", { delay: 450 });
 ScrollReveal().reveal(".skill__item", { delay: 450 });
 ScrollReveal().reveal(".contact__item", { delay: 250 });
+ScrollReveal().reveal(".movie__item", { delay: 250 });
 ScrollReveal().reveal(".footer", { delay: 250 });
