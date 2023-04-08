@@ -17,51 +17,28 @@ $(function () {
   $('body').scrollspy({ target: '#navbarNav', offset: 40 });
 });
 //---------------------------------------------------------------------------
-
-
-
-/*
-if (window.location.pathname === '/like.html') { 
-  // Obtener la lista de géneros original
-const genresList = document.querySelector('.genres-list genres-list--original');
-
-// Crear una copia de la lista original para simular el movimiento infinito
-const genresListCloned = genresList.cloneNode(true);
-genresListCloned.classList.add('genres-list genres-list--cloned');
-genresListContainer.appendChild(genresListCloned);
-
-// Iniciar el desplazamiento cada cierto tiempo
-let scrollInterval = setInterval(scrollGenres, 20);
-
-// Detener el desplazamiento al pasar el mouse sobre el contenedor
-genresListContainer.addEventListener('mouseenter', () => {
-  clearInterval(scrollInterval);
-});
-
-// Reanudar el desplazamiento al quitar el mouse del contenedor
-genresListContainer.addEventListener('mouseleave', () => {
-  scrollInterval = setInterval(scrollGenres, 20);
-});
-
-function scrollGenres() {
-  // Obtener el ancho total de la lista original
-  const genresListWidth = genresList.offsetWidth;
+if (window.location.pathname !== '/index.html') {
   
-  // Obtener el ancho total de la lista clonada
-  const genresListClonedWidth = genresListCloned.offsetWidth;
+const section = document.querySelector('#music-like');
+const options = {
+  rootMargin: '0px',
+  threshold: 0.5 // el observer se activará cuando la sección esté al 50% dentro del viewport
+};
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelector('.list-music ul').style.animationPlayState = 'running';
+      observer.unobserve(entry.target);
+    }
+  });
+}, options);
 
-  // Mover la lista clonada hacia la izquierda
-  genresListCloned.style.transform = `translateX(-${genresListClonedWidth}px)`;
+observer.observe(section);
 
-  // Volver a empezar el desplazamiento cuando la lista clonada se haya movido completamente hacia la izquierda
-  if (Math.abs(genresListClonedWidth) >= genresListWidth) {
-    genresListCloned.style.transform = 'translateX(0)';
-  }
-}
-
-}  **/
- 
-//*
+ScrollReveal().reveal(".movie__item", { delay: 250 });
+ScrollReveal().reveal(".list-music", { delay: 300 });
+} 
+//-------------------------------------------------------------------------------------
 ScrollReveal().reveal(".navbar", { delay: 250 });
 ScrollReveal().reveal(".home__profile", { delay: 350 });
 ScrollReveal().reveal(".home__title--primary", { delay: 350 });
@@ -75,6 +52,4 @@ ScrollReveal().reveal(".button--cta", { delay: 550 });
 ScrollReveal().reveal(".skill__title", { delay: 450 });
 ScrollReveal().reveal(".skill__item", { delay: 450 });
 ScrollReveal().reveal(".contact__item", { delay: 250 });
-ScrollReveal().reveal(".movie__item", { delay: 250 });
-ScrollReveal().reveal(".list-music", { delay: 150 });
 ScrollReveal().reveal(".footer", { delay: 250 });
