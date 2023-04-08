@@ -253,7 +253,6 @@ section {
   color: var(--grey);
 }
 
-
 .movie__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -269,7 +268,7 @@ section {
   overflow: hidden;
   font-size: 14px;
   border-radius: 20px;
-  transform: scale(0.85);
+  transform: scale(0.8);
 }
 
 .movie__img {
@@ -299,7 +298,7 @@ section {
 .movie__item:hover {
   transition: all 2s; 
   border-radius: 10px;
-  transform: scale(1.2);
+  transform: scale(0.9);
   box-shadow: 0 0 0 3px rgba(73, 147, 77, 0.7);
 }
 
@@ -310,9 +309,6 @@ section {
   border-radius: 10px;
   transform:  translateY(-300px);  
 }
-
-
-
 
 .movie__description--title {
   color: var(--white);
@@ -338,6 +334,46 @@ section {
 
 .button:hover {
   color: var(--blue);
+}
+
+.sport__container{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(25em);
+  margin-top: 5%;
+
+}
+
+.sport__item {
+  width: 100%;
+  height: auto;
+  background: transparent;
+  position: relative;
+  object-fit: cover;
+  overflow: hidden;
+  font-size: 14px;
+  border-radius: 20px;
+  display: block;
+  margin: auto;
+  animation: myAnimation 1.5s infinite;
+  object-fit: contain;
+}
+
+@keyframes myAnimation {
+  0% {
+    transform: scale(0.5);
+  }
+  25% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.5);
+  }
 }
 /*
 .button--cta {
@@ -497,12 +533,63 @@ section {
   color: var(--blue);
 }
 
-.carousel-inner img {
+/*
+.genres-list-music {
+  display: inline-block;
   width: 100%;
-  height: 300px;
-  
+  padding-left: 0;
+  margin: 0;
+  animation: scroll 15s linear infinite;  
+  padding: 0;
+  list-style: none;
 }
 
-.carousel{
-  margin-right: 10%;
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.genres-container:hover .genres-list-music {
+  animation-play-state: paused;
+} */
+
+
+.genre-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.genre-list li {
+  margin: 0 10px;
+}
+
+.list-music ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  animation: scroll 15s linear infinite; 
+}
+
+.list-music li {
+  margin: 0 10px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

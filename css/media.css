@@ -79,6 +79,11 @@
         grid-template-columns: 1fr 1fr;
         gap: 20px;
     }
+
+    .sport__item {
+        animation: none;
+        transform: translateX(-15em);
+    }
 }
 
 @media (max-width: 767px) {
@@ -99,7 +104,7 @@
     .button--cta {
         font-size: 0.7em;
         /* Reduce el tamaño de la fuente para hacer el botón más pequeño */
-        
+
     }
 
     .button--cta::before {
@@ -156,11 +161,22 @@
         border-radius: 10px;
         transition: all 0.3s;
     }
+
+    .sport__item {
+        animation: none;
+        transform: translateX(-15em);
+    }
+
 }
 
 
 @media (max-width: 700px) {
 
+    .sport__item {
+        animation: none;
+        transform: translateX(-15em);
+    }
+    
     .home__background {
         background-image: url(/img/bg_responsive.webp);
         background-attachment: fixed;
@@ -219,5 +235,6 @@
         transition: all 0.3s;
         text-align: center;
     }
+
 
 }
