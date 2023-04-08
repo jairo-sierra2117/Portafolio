@@ -578,13 +578,42 @@ section {
   align-items: center;
   list-style: none;
   padding: 0;
+  margin: 0;
+  gap: 10px;
   animation: scroll 15s linear infinite; 
 }
-
-.list-music li {
+/*
+.list-music-II{
+  width: 100%;
+  padding-right: 20px;
+  overflow: hidden;
+}
+.list-music-II ul {
+  width: 35px;
+  height: 60px;
+  position: relative;
+  animation: scrollY 5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+.list-music li, .list-music-II li {
   margin: 0 10px;
 }
-
+@keyframes scrollY {
+  0% {
+    transform: translateY(0%);
+  }
+  15%, 30%{
+    transform: translateY(-100%);
+  }
+  45%, 60%{
+    transform: translateY(-200%);
+  }
+  75%, 90%{
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(-400%);
+  }
+}  */
 @keyframes scroll {
   0% {
     transform: translateX(0%);
@@ -592,4 +621,16 @@ section {
   100% {
     transform: translateX(-100%);
   }
+}
+
+.list-music ul:hover {
+  animation-play-state: paused;
+}
+
+.container-list {
+  display: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
 }
